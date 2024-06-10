@@ -2,7 +2,7 @@ import React from 'react';
 
 const BookItem = ({ book }) => {
   return (
-    <div>
+    <div className="book-card">
       <h2>{book.volumeInfo.title}</h2>
       {book.volumeInfo.authors && (
         <p>Authors: {book.volumeInfo.authors.join(', ')}</p>
