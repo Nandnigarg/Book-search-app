@@ -2,13 +2,18 @@ import React from 'react';
 
 const BookItem = ({ book }) => {
   return (
-    <li>
-      <h2>{book.title}</h2>
-      <p>Author: {book.authors.join(', ')}</p>
-      {book.thumbnail && (
-        <img src={book.thumbnail} alt={book.title} />
+    <div>
+      <h2>{book.volumeInfo.title}</h2>
+      {book.volumeInfo.authors && (
+        <p>Authors: {book.volumeInfo.authors.join(', ')}</p>
       )}
-    </li>
+      {book.volumeInfo.publisher && (
+        <p>Publisher: {book.volumeInfo.publisher}</p>
+      )}
+      {book.volumeInfo.publishedDate && (
+        <p>Published Date: {book.volumeInfo.publishedDate}</p>
+      )}
+    </div>
   );
 };
 
